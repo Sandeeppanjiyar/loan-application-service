@@ -29,7 +29,7 @@ public class LoanResponse {
         this.rejectionReasons = rejectionReasons;
     }
 
-    public LoanResponse approved(RiskBand riskBand, Offer offer){
+    public static LoanResponse approved(RiskBand riskBand, Offer offer){
         return new LoanResponse(
                 UUID.randomUUID().toString(),
                 ApplicationStatus.APPROVED,
@@ -39,7 +39,7 @@ public class LoanResponse {
         );
     }
 
-    public LoanResponse rejected(List<RejectionReasons> reasons){
+    public static LoanResponse rejected(List<RejectionReasons> reasons){
         return new LoanResponse(
                 UUID.randomUUID().toString(),
                 ApplicationStatus.REJECTED,
